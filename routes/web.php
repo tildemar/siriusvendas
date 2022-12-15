@@ -40,3 +40,9 @@ Route::get('/sobre-nos',[\App\Http\Controllers\SobreNosController::class,'sobreN
 // Route::get('/contato','ContatoController@contato') ;
 
 Route::get('/contato',[\App\Http\Controllers\ContatoController::class,'contato']);
+
+// passagem de parâmetros
+
+Route::get('/contato/{nome}/{assunto?}', function (string $nome, $assunto = 'assunto particular') {
+    echo "Estamos aqui $nome para tratarmos de $assunto." ;
+});

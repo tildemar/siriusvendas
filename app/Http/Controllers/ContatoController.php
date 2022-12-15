@@ -8,6 +8,7 @@ class ContatoController extends Controller
 {
     //
     public function contato() {
-        echo 'Contato - Controller' ;
+        return view('site.contato') ;
+        // echo 'Contato - Controller' ;
     }
 }

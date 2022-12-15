@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class PrincipalController extends Controller
 {
     public function principal() {
-        echo 'Iniciado o Sirius... Controller' ;
+        return view('site.principal') ;
+        // echo 'Iniciado o Sirius... Controller' ;
     }
     //
 }
