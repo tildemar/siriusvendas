@@ -22,10 +22,21 @@ Route::get('/', function () {
 
 Route::get('/',[\App\Http\Controllers\PrincipalController::class,'principal']);
 
-Route::get('/sobre-nos', function () {
-    return 'Sobre-nós' ; 
-});
+// Route::get('/sobre-nos', function () {
+//     return 'Sobre-nós' ; 
+// });
 
-Route::get('/contato', function () {
-    return 'Contato' ; 
-});
+// Apresenta falha no PHP 8, já no php 7 funciona
+// Route::get('/sobre-nos', 'SobreNosController@sobreNos') ; 
+
+Route::get('/sobre-nos',[\App\Http\Controllers\SobreNosController::class,'sobreNos']);
+
+
+// Route::get('/contato', function () {
+//     return 'Contato' ; 
+// });
+
+// Apresenta falha no PHP 8, já no php 7 funciona
+// Route::get('/contato','ContatoController@contato') ;
+
+Route::get('/contato',[\App\Http\Controllers\ContatoController::class,'contato']);

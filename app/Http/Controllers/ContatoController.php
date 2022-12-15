@@ -7,4 +7,7 @@ use Illuminate\Http\Request;
 class ContatoController extends Controller
 {
     //
+    public function contato() {
+        echo 'Contato - Controller' ;
+    }
 }
