@@ -13,14 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('site_contatos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('nome', 100);
-            $table->string('telefone', 25);
-            $table->string('email', 100);  
-            $table->integer('motivo_contato');
-            $table->text('mensagem');
+        Schema::table('fornecedores',function(Blueprint $table){
+            $table->string('site',150)->after('nome')->nullable() ;
         });
     }
 
@@ -31,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('site_contatos');
+        Schema::table('fornecedores',function(Blueprint $table){
+            $table->dropColumn('site') ;
+        });
     }
 };
